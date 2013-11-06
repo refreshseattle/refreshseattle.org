@@ -1,4 +1,4 @@
 require 'test_helper'
 
-describe EventHelper do
+describe EventsHelper do
 end

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -50,6 +50,9 @@ gem 'debugger', group: [:development, :test]
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'guard', '>= 2.1.0'
+  gem 'guard-minitest'
+  gem 'guard-livereload', require: false
 end
 
 group :test do
