@@ -48,11 +48,12 @@ gem 'unicorn'
 gem 'debugger', group: [:development, :test]
 
 group :development do
-  gem "binding_of_caller"
-  gem "better_errors"
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
 group :test do
-  gem "faker"
-  gem "minitest-rails"
+  gem 'faker'
+  gem 'minitest'
+  gem 'minitest-rails'
 end
