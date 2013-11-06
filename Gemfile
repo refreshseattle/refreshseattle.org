@@ -51,6 +51,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'guard', '>= 2.1.0'
+  gem 'guard-bundler'
   gem 'guard-minitest'
   gem 'guard-livereload', require: false
 end
