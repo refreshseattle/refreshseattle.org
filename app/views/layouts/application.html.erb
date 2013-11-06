@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Refreshsea</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Refreshsea</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <header class="header">
+      <nav>
+        <ul>
+          <li class="e2-e7 brand">
+            <a href="/">Refresh Seattle</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-</body>
+    <%= yield %>
+
+    <footer class="footer" style="clear: both;">
+      <div class="l-wrapper">
+        <section class="footer-info e2-e4">
+          <arcticle>
+            <h1>About</h1>
+            <p>Refresh Seattle is a community of designers and developers working to refresh the creative, technical, and professional culture of New Media endeavors in the Seattle/Puget Sound area. Promoting design, technology, usability, and standards, Refresh Seattle is a part of Refresh and the associated <a href="http://refreshingcities.com/">Refreshing Cities</a>.</p>
+          </article>
+
+          <article>
+            <ul class="undecorated social">
+              <li>
+                <a class="ss-social-circle ss-icon" href="http://twitter.com/refreshSEA">Twitter</a>
+              </li>
+              <li>
+                <a class="ss-social-circle ss-icon" href="http://github.com/refreshseattle">GitHub</a>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="footer-speakers e5-e7">
+          <h1>Upcoming Speakers</h1>
+          <p>We&rsquo;re on the look for more speakers! If you'd like to present, please <a href="mailto:organizers@refreshseattle.org">contact us</a>!</p>
+        </section>
+      </div>
+    </footer>
+    <!-- Made with love and coffee in the PNW. Want to help out? Ping us at admin@refreshseattle.org -->
+    <!-- (~)> -->
+  </body>
 </html>

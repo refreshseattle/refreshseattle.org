@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Refreshsea"
+  config.site_title = "Refresh Seattle"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -228,4 +228,12 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+end
+
+# Fix Strong Params support
+ActiveAdmin::ResourceController.class_eval do
+  # Allow ActiveAdmin admins to freely mass-assign when using strong_parameters
+  def resource_params
+    [(params[resource_request_name] || params[resource_instance_name]).try(:permit!) || {}]
+  end
 end
