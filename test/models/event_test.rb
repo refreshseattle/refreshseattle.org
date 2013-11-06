@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class EventTest < ActiveSupport::TestCase
-  # test "the truth" do
+describe Event do
+  # it "should be truthy" do
   #   assert true
   # end
 end

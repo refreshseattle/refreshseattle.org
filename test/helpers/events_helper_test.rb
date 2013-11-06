@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class EventsHelperTest < ActionView::TestCase
+describe EventHelper do
 end

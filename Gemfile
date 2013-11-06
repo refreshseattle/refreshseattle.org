@@ -54,6 +54,6 @@ end
 
 group :test do
   gem 'faker'
-  gem 'minitest'
+  gem 'minitest', '~> 4.7'
   gem 'minitest-rails'
 end
