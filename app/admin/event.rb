@@ -18,8 +18,8 @@ ActiveAdmin.register Event do
     end
 
     f.actions do
-      f.buutonaction :submit, as: :button
-      f.buttonaction :cancel, as: :button
+      f.button :submit, as: :button
+      #f.buttonaction :cancel, as: :button
     end
   end
 end
