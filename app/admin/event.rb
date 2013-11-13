@@ -17,9 +17,6 @@ ActiveAdmin.register Event do
       f.input :eventbrite_id, label: "Eventbrite Event ID"
     end
 
-    f.actions do
-      f.button :submit, as: :button
-      #f.buttonaction :cancel, as: :button
-    end
+    f.actions
   end
 end
