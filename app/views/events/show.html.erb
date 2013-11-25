@@ -2,7 +2,7 @@
   <article class="event-info e2-e7">
     <h1 class="event-title"><%= @event.title %></h1>
     <h2 class="event-time"><%= @event.event_date %> <small><strong><%= @event.event_start_time %>&ndash;<%= @event.event_end_time %></strong> at <strong><%= @event.site_name %></strong> (<%= @event.site_address %>)</small></h2>
-    <p class="event-description"><%= @event.description %></p>
+    <p class="event-description"><%= markdown @event.description %></p>
   </article>
 
   <article class="details">
