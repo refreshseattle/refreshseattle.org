@@ -1,0 +1,56 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box; // Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+
+}
+
+@mixin footer-spacing {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px dotted $footerBackgroundHighlight;
+}
+
+// Named breakpoints
+
+@mixin at-least($device-width) {
+  @media screen and (min-width: $device-width) {
+    @content
+  }
+}
+
+@mixin until($device-width) {
+  @media screen and (max-width: $device-width - 1) {
+    @content
+  }
+}
+
+@mixin between($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width - 1) {
+    @content
+  }
+}
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @include at-least(1024px) {
+      @content
+    }
+  }
+
+  @else if $point == medium {
+    @include between(768px, 1024px) {
+      @content
+    }
+  }
+
+  @else if $point == small {
+    @include until(480px) {
+      @content
+    }
+  }
+}
+
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+    @content
+  }
+}

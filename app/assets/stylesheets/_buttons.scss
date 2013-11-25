@@ -1,0 +1,49 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: $paddingBaseVertical $paddingBaseHorizontal;
+  border: 1px solid transparent;
+  border-color: $buttonDefaultBorder;
+  border-radius: $baseBorderRadius;
+  background-color: $buttonDefaultBackground;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  color: $buttonDefaultColor;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: $buttonFontWeight;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  cursor: pointer;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    border-color: darken($buttonDefaultBorder, 12%);
+    background-color: darken($buttonDefaultBackground, 8%);
+    color: $buttonDefaultColor;
+  }
+
+  &:hover,
+  &:focus {
+    color: $buttonDefaultColor;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    border-color: $buttonDefaultBorder;
+    background-color: $buttonDefaultBackground;
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+  }
+}

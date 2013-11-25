@@ -236,6 +236,7 @@ DEPENDENCIES
   activeadmin!
   better_errors
   binding_of_caller
+  bourbon
   coffee-rails (~> 4.0.0)
   debugger
   faker

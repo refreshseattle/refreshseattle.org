@@ -1,0 +1,50 @@
+// Default colors
+// --------------
+
+// Grays
+$white:          #fff;
+$lightGray:      #fafafa;
+$darkGray:       #222;
+
+// Cool
+$seafoam:        #bbdcc9;
+$aqua:           #38b4aa;
+$blue:           #c0c0c0;
+$darkBlue:       #015368;
+$darkBlueAlt:    #005366;
+
+// Warm
+$red:            #b83616;
+$green:          #659a67;
+
+// Theme colors
+$textColor:                 $darkBlue;
+$linkColor:                 $red;
+$bodyBackground:            lighten($seafoam, 15%);
+$footerBackground:          $darkBlue;
+$footerBackgroundHighlight: tint($darkBlue, 20%);
+$footerTextColor:           $white;
+
+// Font Families
+$serifFamily:     'Adelle', 'adelle', 'Times New Roman', serif;
+$sansSerifFamily: 'Adelle Sans', 'adelle-sans', 'Helvetica Neue', Arial, sans-serif;
+
+$headingsFamily: $serifFamily;
+$baseFamily:     $sansSerifFamily;
+
+$baseFontSize:   16px;
+$baseLineHeight: 1.4rem;
+
+// Layout
+
+$paddingBaseVertical: 8px;
+$paddingBaseHorizontal: 12px;
+
+$baseBorderRadius: 3;
+
+// Buttons
+
+$buttonFontWeight: 600;
+$buttonDefaultColor: $white;
+$buttonDefaultBackground: $linkColor;
+$buttonDefaultBorder: darken($buttonDefaultBackground, 5%)

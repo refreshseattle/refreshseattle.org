@@ -1,0 +1,281 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: $footerBackground;
+  color: $textColor;
+  font: {
+    weight: 200;
+    family: $baseFamily;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: {
+    family: $headingsFamily;
+    weight: normal;
+  }
+}
+
+a {
+  display: inline-block;
+  padding: 0 3px;
+  background-color: darken($bodyBackground, 5%);
+  color: $red;
+  text-decoration: none;
+
+  @include border-radius(3px);
+  @include box-sizing(border-box);
+  @include transition(all 0.2s ease-in-out);
+
+  &:hover, &:active {
+    color: $bodyBackground;
+    background-color: $red;
+  }
+}
+
+.header {
+  position: relative;
+  min-height: 27px;
+  background-color: $seafoam;
+
+  @include clearfix;
+
+  ul, ol {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  a {
+    padding: 0;
+
+    @include border-radius(0);
+  }
+
+  .brand {
+      a {
+      display: block;
+      overflow: hidden;
+      width: 162px;
+      height: 57px;
+      text-indent: -9999px;
+      background: url('assets/img/logo.png') top left no-repeat;
+      position: absolute;
+      z-index: 3000;
+    }
+  }
+}
+
+.l-wrapper {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  padding: {
+    top: 30px;
+    right: 3%;
+    bottom: 30px;
+    left: 3%;
+  }
+  width: 100%;
+  background-color: $bodyBackground;
+
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 250%;
+    background-color: inherit;
+  }
+
+  &:before {
+    left: -250%;
+  }
+
+  &:after {
+    right : -250%;
+  }
+
+  > div {
+    @include clearfix;
+  }
+}
+
+#main.l-wrapper, .footer {
+  max-width: 1440px;
+}
+
+ul, ol {
+  &.undecorated {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
+
+.details {
+  clear: both;
+  padding: 15px 0 30px 0;
+
+  .details-description {
+    clear: both;
+  }
+
+  .details-event-info {
+    margin-bottom: 15px;
+  }
+
+  .details-map {
+    &, iframe {
+      @include border-radius(5px);
+    }
+  }
+}
+
+.event-info {
+  position: relative;
+  padding-top: 30px;
+
+  .event-title, .event-time {
+    text-align: center;
+  }
+
+  .event-title {
+  }
+
+  .event-time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 18px;
+    color: tint($textColor, 60%);
+  }
+
+  .event-description {
+    text-align: center;
+  }
+}
+
+.footer {
+  clear: both;
+  margin: 30px auto 0 auto;
+  padding-bottom: 30px;
+  background-color: $footerBackground;
+  color: $footerTextColor;
+
+  @include clearfix;
+
+  a {
+    padding: 0;
+    background-color: transparent;
+    color: lighten($footerBackground, 50%);
+
+    &:hover, &:active {
+      background-color: transparent;
+      color: $bodyBackground;
+    }
+  }
+
+  .l-wrapper {
+    padding-top: 0;
+    background-color: $footerBackground;
+  }
+}
+
+.social {
+  @include footer-spacing;
+
+  li {
+    display: inline-block;
+
+    & + li {
+      margin-left: 10px;
+    }
+
+    a {
+      font-size: 24px;
+    }
+  }
+}
+
+.footer-mailing-list {
+  @include footer-spacing;
+
+  label {
+    display: block;
+  }
+
+  li {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-mailing-list-powered-by {
+    a {
+      display: inline-block;
+      width: 37%;
+      margin-left: 0.5rem;
+      position: relative;
+      top: 6px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoint(small) {
+
+  // Styles for mobile
+
+  [class^="e1"], [class*="e1"],
+  [class^="e2"], [class*="e2"],
+  [class^="e3"], [class*="e3"],
+  [class^="e4"], [class*="e4"],
+  [class^="e5"], [class*="e5"],
+  [class^="e6"], [class*="e6"],
+  [class^="e7"], [class*="e7"],
+  [class^="e8"], [class*="e8"],
+  [class^="e-"], [class*="e-"],
+  [class^="sv"], [class*=" sv"],
+  [class^="sx"], [class*=" sx"] {
+    display: block;
+    float: none;
+    clear: both;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .header {
+    margin-bottom: 0;
+    height: 57px;
+
+    .brand {
+      width: 100%;
+    }
+  }
+
+  .event-info {
+    padding-top: 30px;
+
+    .event-time {
+      margin-top: 0;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+
+  // Styles for tablet
+
+}
+
+@include retina {
+
+  // Don't forget your Retina CSS!
+
+}
