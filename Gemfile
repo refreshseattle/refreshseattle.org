@@ -49,6 +49,8 @@ gem 'unicorn'
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
