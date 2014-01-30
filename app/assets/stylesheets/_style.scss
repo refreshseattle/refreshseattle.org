@@ -62,7 +62,7 @@ a {
       width: 162px;
       height: 57px;
       text-indent: -9999px;
-      background: url('assets/img/logo.png') top left no-repeat;
+      background: image-url('logo.png') top left no-repeat;
       position: absolute;
       z-index: 3000;
     }
@@ -107,6 +107,7 @@ a {
 
 #main.l-wrapper, .footer {
   max-width: 1440px;
+  @include clearfix;
 }
 
 ul, ol {
@@ -119,6 +120,7 @@ ul, ol {
 .details {
   clear: both;
   padding: 15px 0 30px 0;
+  overflow: hidden;
 
   .details-description {
     clear: both;
@@ -166,8 +168,7 @@ ul, ol {
   padding-bottom: 30px;
   background-color: $footerBackground;
   color: $footerTextColor;
-
-  @include clearfix;
+  overflow: hidden;
 
   a {
     padding: 0;

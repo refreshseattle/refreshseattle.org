@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Refreshsea</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>Refresh Seattle</title>
+
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= stylesheet_link_tag "//cdn.symbolset.com/7caa794d058ea28c29dee173f9491b3993b2d375/symbolset.css", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "//use.typekit.net/bzu2pnd.js", "data-turbolinks-track" => true %>
+    <% javascript_tag 'try{Typekit.load();}catch(e){}' %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -19,12 +25,9 @@
       </nav>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <%= yield %>
 
-    <footer class="footer" style="clear: both;">
+    <footer class="footer">
       <div class="l-wrapper">
         <section class="footer-info e2-e4">
           <arcticle>
@@ -34,7 +37,7 @@
 
           <article>
             <ul class="undecorated social">
-              <li>
+              <li>  
                 <a class="ss-social-circle ss-icon" href="http://twitter.com/refreshSEA">Twitter</a>
               </li>
               <li>
