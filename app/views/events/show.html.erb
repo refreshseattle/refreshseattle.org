@@ -1,7 +1,7 @@
 <section id="main" class="l-wrapper">
   <article class="event-info e2-e7">
     <h1 class="event-title"><%= @event.title %></h1>
-    <h2 class="event-time"><%= @event.event_date %> <small><strong><%= @event.event_start_time %>&ndash;<%= @event.event_end_time %></strong> at <strong><%= @event.site_name %></strong> (<%= @event.site_address %>)</small></h2>
+    <h2 class="event-time"><%= @event.event_date.to_time.to_formatted_s(:month_and_day) %> <small><strong><%= @event.event_start_time.to_s(:time_no_meridian).lstrip %>&ndash;<%= @event.event_end_time.to_s(:time_with_meridian).lstrip %></strong> at <strong><%= @event.site_name %></strong> (<%= @event.site_address %>)</small></h2>
     <p class="event-description"><%= markdown @event.description %></p>
   </article>
 
