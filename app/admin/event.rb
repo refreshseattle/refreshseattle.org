@@ -1,6 +1,10 @@
 ActiveAdmin.register Event do
   today = Time.new
   form do |f|
+    f.inputs "Feature" do
+      f.input :featured, label: "Show on homepage?"
+    end
+
     f.inputs "Time" do
       f.input :event_date, as: :date_picker, input_html: {value: "#{today.year}-#{today.month}-#{today.day}"}
       f.input :event_start_time, label: "Event Starts At", as: :time_picker, input_html: { value: "18:00" }
