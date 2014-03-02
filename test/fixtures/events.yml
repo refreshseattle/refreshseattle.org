@@ -4,6 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+# Past event
 one:
   event_date : "2014-02-26"
   event_start_time: "18:30:00"
@@ -14,8 +16,9 @@ one:
   description: "Lorem ipsum dolor sit amet..."
   eventbrite_id: "EVENTBRITE"
 
+# Featured event
 two:
-  event_date : "2014-03-26"
+  event_date : <%= Date.today.strftime "%Y-%m-%d" %>
   event_start_time: "18:30:00"
   event_end_time: "21:00:00"
   site_name: "Test Site"
@@ -24,3 +27,13 @@ two:
   description: "Lorem ipsum dolor sit amet..."
   eventbrite_id: "EVENTBRITE"
   featured: true
+
+future:
+  event_date : <%= 1.month.from_now.strftime "%Y-%m-%d" %>
+  event_start_time: "18:30:00"
+  event_end_time: "21:00:00"
+  site_name: "Test Site"
+  site_address: "123 Main St. #203"
+  title: "A Future Refreshing Event"
+  description: "Lorem ipsum dolor sit amet..."
+  eventbrite_id: "EVENTBRITE"

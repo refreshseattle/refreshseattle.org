@@ -7,4 +7,8 @@ class Event < ActiveRecord::Base
   validates :title,            presence: true
   validates :description,      presence: true
   validates :eventbrite_id,    presence: true
+
+  def is_upcoming?
+    event_date.to_date >= Date.today
+  end
 end

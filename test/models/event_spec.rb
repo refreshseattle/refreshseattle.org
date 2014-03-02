@@ -45,4 +45,12 @@ describe Event do
   end
 
   it "should only allow one featured event"
+
+  it "should know if it is an upcoming event" do
+    events(:one).is_upcoming?.must_equal false
+
+    events(:two).is_upcoming?.must_equal true
+    future_event = events :future
+    future_event.is_upcoming?.must_equal true
+  end
 end
