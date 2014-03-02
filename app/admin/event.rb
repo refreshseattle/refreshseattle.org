@@ -1,13 +1,14 @@
 ActiveAdmin.register Event do
   today = Time.new
   form do |f|
+    # TODO: The values in this form should use the stored data if present
     f.inputs "Feature" do
       f.input :featured, label: "Show on homepage?"
     end
 
     f.inputs "Time" do
       f.input :event_date, as: :date_picker, input_html: {value: "#{today.year}-#{today.month}-#{today.day}"}
-      f.input :event_start_time, label: "Event Starts At", as: :time_picker, input_html: { value: "18:00" }
+      f.input :event_start_time, label: "Event Starts At", as: :time_picker, input_html: { value: "18:30" }
       f.input :event_end_time, label: "Event Ends At", as: :time_picker, input_html: { value: "21:00" }
     end
 
