@@ -43,4 +43,6 @@ describe Event do
     event.invalid?(:eventbrite_id).must_equal true
     event.errors[:eventbrite_id].must_equal presence_error_message
   end
+
+  it "should only allow one featured event"
 end

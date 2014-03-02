@@ -229,6 +229,25 @@ ul, ol {
   }
 }
 
+.event-list {
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    padding-left: 0;
+  }
+
+  .event-info .event-time {
+    position: static;
+    font-size: 0.8em;
+  }
+
+  .featured {
+    font-size: 1.2rem;
+  }
+}
+
+
 @include breakpoint(small) {
 
   // Styles for mobile
