@@ -1,5 +1,5 @@
 class EventsController < InheritedResources::Base
   def index
-    @events = Event.all.reverse
+    @events = Event.all
   end
 end
