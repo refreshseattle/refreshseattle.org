@@ -2,7 +2,7 @@
   <section id="main" class="l-wrapper">
   <ol class="event-list e2-e7">
     <% @events.each do |event| %>
-    <%= content_tag :li, class: "event-info #{'featured ss-star' if event.featured}".rstrip do %>
+    <%= content_tag :li, class: "event-info #{'event-featured ss-star' if event.featured} #{'event-upcoming' if event.is_upcoming?}".rstrip do %>
       <%= link_to event, class: "event-title" do %>
         <%= event.title %>:
       <% end %>

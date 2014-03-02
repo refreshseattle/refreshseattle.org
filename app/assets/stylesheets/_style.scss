@@ -235,15 +235,25 @@ ul, ol {
 
   li {
     padding-left: 0;
+    opacity: 0.5;
+
+    @include transition(opacity 0.3s);
+
+    &.event-featured,
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+    }
+
+    &.event-featured {
+      font-size: 1.2rem;
+    }
   }
 
   .event-info .event-time {
     position: static;
     font-size: 0.8em;
-  }
-
-  .featured {
-    font-size: 1.2rem;
   }
 }
 
