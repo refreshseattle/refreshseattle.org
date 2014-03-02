@@ -7,7 +7,12 @@ Refreshsea::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'events#index'
+  root 'home#index'
+
+  # Support old routes; TODO: create "pages" controller to manage this from the application
+  get 'sponsors' => 'home#sponsors'
+  get 'subscribed' => 'home#subscribed'
+  get 'thankyou' => 'home#thankyou'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
