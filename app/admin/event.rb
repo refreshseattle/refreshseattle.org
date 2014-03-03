@@ -18,6 +18,7 @@ ActiveAdmin.register Event do
     end
 
     f.inputs "Details" do
+      f.input :speaker, label: "Speaker Name"
       f.input :title, label: "Event Title"
       f.input :description
       f.input :eventbrite_id, label: "Eventbrite Event ID", input_html: {value: "8922626817"}

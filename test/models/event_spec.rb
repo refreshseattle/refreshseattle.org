@@ -44,6 +44,11 @@ describe Event do
     event.errors[:eventbrite_id].must_equal presence_error_message
   end
 
+  it "should require a speaker" do
+    event.invalid?(:speaker).must_equal true
+    event.errors[:speaker].must_equal presence_error_message
+  end
+
   it "should only allow one featured event"
 
   it "should know if it is an upcoming event" do

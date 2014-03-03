@@ -257,6 +257,20 @@ ul, ol {
   }
 }
 
+.speakers-upcoming {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin: 0.4rem auto;
+  }
+
+  .speaker-date {
+    font-size: 0.8em;
+    opacity: 0.75;
+  }
+}
+
 
 @include breakpoint(small) {
 

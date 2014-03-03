@@ -9,6 +9,10 @@ describe HomeController do
       assert_template "events/show"
     end
 
+    it "should get list of upcoming speakers" do
+      get :index
+    end
+
     it "should show 'no_event' template when no events are featured" do
       featured_event = Event.where(featured: true).first
       featured_event.update_attribute(:featured, false)

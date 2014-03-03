@@ -50,6 +50,15 @@
         <section class="footer-upcoming e5-e7">
           <div class="footer-speakers">
             <h1>Upcoming Speakers</h1>
+            <% if upcoming_speakers.any? %>
+              <ol class="speakers-upcoming">
+              <% upcoming_speakers.each do |speaker| %>
+                <li class="speaker">
+                  <span class="speaker-name"><%= speaker[:name] %></span><span class="speaker-date"> &ndash; <%= speaker[:date].to_time.to_formatted_s :month_and_day %></span>
+                </li>
+              <% end %>
+              </ol>
+            <% end %>
             <p>We&rsquo;re on the look for more speakers! If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us' %>!</p>
           </div>
 

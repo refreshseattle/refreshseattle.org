@@ -15,6 +15,7 @@ one:
   title: "A Refreshing Event"
   description: "Lorem ipsum dolor sit amet..."
   eventbrite_id: "EVENTBRITE"
+  speaker: "Refresh Speaker 1"
 
 # Featured event
 two:
@@ -26,6 +27,7 @@ two:
   title: "A Different Refreshing Event"
   description: "Lorem ipsum dolor sit amet..."
   eventbrite_id: "EVENTBRITE"
+  speaker: "Refresh Speaker 2"
   featured: true
 
 future:
@@ -36,4 +38,5 @@ future:
   site_address: "123 Main St. #203"
   title: "A Future Refreshing Event"
   description: "Lorem ipsum dolor sit amet..."
+  speaker: "Refresh Speaker 3"
   eventbrite_id: "EVENTBRITE"
