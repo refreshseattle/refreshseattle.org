@@ -1,7 +1,19 @@
 require 'test_helper'
 
 describe Event do
-  let(:event) { Event.new }
+  let(:event) do
+    event = Event.new
+    event.event_date = nil
+    event.event_start_time = nil
+    event.event_end_time = nil
+    event.site_name = nil
+    event.site_address = nil
+    event.title = nil
+    event.description = nil
+    event.eventbrite_id = nil
+    event
+  end
+
   let(:presence_error_message) { ["can't be blank"] }
 
   it "should require date" do

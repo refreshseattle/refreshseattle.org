@@ -1,5 +1,4 @@
 ActiveAdmin.register Event do
-  today = Time.new
   form do |f|
     # TODO: The values in this form should use the stored data if present
     f.inputs "Feature" do
@@ -7,21 +6,21 @@ ActiveAdmin.register Event do
     end
 
     f.inputs "Time" do
-      f.input :event_date, as: :date_picker, input_html: {value: "#{today.year}-#{today.month}-#{today.day}"}
-      f.input :event_start_time, label: "Event Starts At", as: :time_picker, input_html: { value: "18:30" }
-      f.input :event_end_time, label: "Event Ends At", as: :time_picker, input_html: { value: "21:00" }
+      f.input :event_date, as: :date_picker
+      f.input :event_start_time, label: "Event Starts At", as: :time_picker
+      f.input :event_end_time, label: "Event Ends At", as: :time_picker
     end
 
     f.inputs "Location" do
-      f.input :site_name, label: "Location", input_html: {value: "Substantial"}
-      f.input :site_address, label: "Address", input_html: {value: "900 E. Pine St. Seattle WA 98122"}
+      f.input :site_name, label: "Location"
+      f.input :site_address, label: "Address"
     end
 
     f.inputs "Details" do
       f.input :speaker, label: "Speaker Name"
       f.input :title, label: "Event Title"
       f.input :description
-      f.input :eventbrite_id, label: "Eventbrite Event ID", input_html: {value: "8922626817"}
+      f.input :eventbrite_id, label: "Eventbrite Event ID"
     end
 
     f.actions
