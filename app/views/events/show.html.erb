@@ -11,7 +11,7 @@
     </div>
 
     <div id="map" class="details-map sv5-sv6">
-      <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//www.google.com/maps?t=m&amp;q=900+E+Pine,+Suite+%23202&amp;ie=UTF8&amp;hq=&amp;hnear=900+E+Pine+St+%23202,+Seattle,+Washington+98122&amp;z=14&amp;ll=47.614128,-122.32137&amp;output=embed&amp;iwloc=near"></iframe>
+      <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['MAPS_API_KEY'] %>&q=<%= CGI.escape @event.site_address %>"></iframe>
     </div>
   </article>
 </section>
