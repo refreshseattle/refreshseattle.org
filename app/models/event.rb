@@ -21,10 +21,10 @@ class Event < ActiveRecord::Base
   def default_values
     today = Time.new
     self.event_date = "#{today.year}-#{today.month}-#{today.day}" if self.event_date.nil?
-    self.event_start_time = "18:30"
-    self.event_end_time = "21:00"
-    self.site_name = "Substantial"
-    self.site_address = "900 E. Pine St. Seattle WA 98122"
-    self.eventbrite_id = "8922626817"
+    self.event_start_time = "18:30" if self.event_start_time.nil?
+    self.event_end_time = "21:00" if self.event_end_time.nil?
+    self.site_name = "Substantial" if self.site_name.nil?
+    self.site_address = "900 E. Pine St. Seattle WA 98122" if self.site_address.nil?
+    self.eventbrite_id = "8922626817" if self.eventbrite_id.nil?
   end
 end
