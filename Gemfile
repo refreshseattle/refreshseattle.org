@@ -54,6 +54,8 @@ gem 'debugger', group: [:development, :test]
 
 gem 'newrelic_rpm'
 
+gem 'dotenv-rails', group: [:development, :test]
+
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
