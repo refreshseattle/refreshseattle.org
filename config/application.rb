@@ -1,16 +1,16 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'dotenv'
+
+# Load DotEnv
+if Rails.env.development? or Rails.env.testing?
+  require 'dotenv'
+  Dotenv.load
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
-
-# Load DotEnv
-if Rails.env.development? or Rails.env.testing?
-  Dotenv.load
-end
 
 module Refreshsea
   class Application < Rails::Application
