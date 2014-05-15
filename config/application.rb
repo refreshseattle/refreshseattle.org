@@ -8,7 +8,9 @@ require 'dotenv'
 Bundler.require(:default, Rails.env)
 
 # Load DotEnv
-Dotenv.load
+if Rails.env.development? or Rails.env.testing?
+  Dotenv.load
+end
 
 module Refreshsea
   class Application < Rails::Application
