@@ -6,7 +6,7 @@ This is the code repository for the refresh seattle website.
 
 We gladly accept patches, pull-requests, and any other feedback you might have
 about how we can improve the site! To do so, either open up an
-[issue](/issues)], or create a [pull request](/pulls). Please refer to the
+[issue](https://github.com/refreshseattle/refreshseattle.org/issues)], or create a [pull request](https://github.com/refreshseattle/refreshseattle.org/pulls). Please refer to the
 [contributing](./CONTRIBUTING.md) documentation.
 
 ### Setup
@@ -19,7 +19,7 @@ names).
 
 ### Tests
 
-To run the test suite, currently (and this is a [bug](/issues/1)), you must use `guard`:
+To run the test suite, currently (and this is a [bug](https://github.com/refreshseattle/refreshseattle.org/issues/1)), you must use `guard`:
 
     $ bundle exec guard
     # All guard output happens here
