@@ -6,7 +6,7 @@ This is the code repository for the refresh seattle website.
 
 We gladly accept patches, pull-requests, and any other feedback you might have
 about how we can improve the site! To do so, either open up an
-[issue](https://github.com/refreshseattle/refreshseattle.org/issues)], or create a [pull request](https://github.com/refreshseattle/refreshseattle.org/pulls). Please refer to the
+[issue](https://github.com/refreshseattle/refreshseattle.org/issues), or create a [pull request](https://github.com/refreshseattle/refreshseattle.org/pulls). Please refer to the
 [contributing](./CONTRIBUTING.md) documentation.
 
 ### Setup
