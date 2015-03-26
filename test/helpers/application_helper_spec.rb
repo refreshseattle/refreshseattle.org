@@ -18,4 +18,15 @@ describe ApplicationHelper do
       assert_equal speakers.first[:date], events(:two).event_date
     end
   end
+
+  describe "#upcoming_events" do
+    it "should get a list of events with speakers and dates" do
+      events = upcoming_events
+      assert_not_nil events
+      assert events.instance_of?(Array), "Expected events to be an Array"
+      assert_equal events.first[:title], events(:two).title
+      assert_equal events.first[:speaker], events(:two).speaker
+      assert_equal events.first[:date], events(:two).event_date
+    end
+  end
 end

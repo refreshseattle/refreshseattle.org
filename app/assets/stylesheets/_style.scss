@@ -203,9 +203,11 @@ ul, ol {
   }
 }
 
-.footer-mailing-list {
+.footer-about {
   @include footer-spacing;
+}
 
+.footer-mailing-list {
   label {
     display: block;
   }
