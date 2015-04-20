@@ -42,7 +42,7 @@
               </ol>
             <% end %>
             <p><%= link_to "Check out all of our upcoming events!", events_path %></p>
-            <p>We&rsquo;re on the look for more speakers! If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us' %>!</p>
+            <p>We&rsquo;re on the look for more speakers! If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us', encode: 'hex' %>!</p>
           </div>
         </section>
 
