@@ -51,9 +51,8 @@ describe Event do
     event.errors[:description].must_equal presence_error_message
   end
 
-  it "should require eventbrite id" do
-    event.invalid?(:eventbrite_id).must_equal true
-    event.errors[:eventbrite_id].must_equal presence_error_message
+  it "should not require eventbrite id" do
+    event.invalid?(:eventbrite_id).must_equal false
   end
 
   it "should require a speaker" do

@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   validates :site_address,     presence: true
   validates :title,            presence: true
   validates :description,      presence: true
-  validates :eventbrite_id,    presence: true
+  validates :eventbrite_id,    presence: false
   validates :speaker,          presence: true
 
   def is_upcoming?
