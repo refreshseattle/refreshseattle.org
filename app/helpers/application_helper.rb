@@ -9,4 +9,8 @@ module ApplicationHelper
   def upcoming_speakers
     @upcoming_speakers ||= Event.upcoming.reverse.map {|e| {name: e.speaker, date: e.event_date} }
   end
+
+  def upcoming_events
+    @upcoming_events ||= Event.upcoming.reverse.map {|e| {title: e.title, speaker: e.speaker, date: e.event_date, id: e.id}}
+  end
 end

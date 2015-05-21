@@ -29,15 +29,56 @@
 
     <footer class="footer">
       <div class="l-wrapper">
-        <section class="footer-info e2-e4">
-          <arcticle>
+      <section class="footer-upcoming e2-e4">
+          <div class="footer-speakers">
+            <h1>Upcoming Events</h1>
+            <% if upcoming_events.any? %>
+              <ol class="speakers-upcoming">
+              <% upcoming_events.slice(0, 3).each do |event| %>
+                <li class="speaker">
+                  <span class="speaker-name"><%= link_to event[:title], event_path(event[:id]) %></span><br/><span class="speaker-date"><%= event[:date].to_time.to_formatted_s :month_and_day %> &ndash; <%= event[:speaker] %></span>
+                </li>
+              <% end %>
+              </ol>
+            <% end %>
+            <p><%= link_to "Check out all of our upcoming events!", events_path %></p>
+            <p>We&rsquo;re on the look for more speakers! If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us', encode: 'hex' %>!</p>
+          </div>
+        </section>
+
+        <section class="e5-e7">
+          <article class="footer-mailing-list">
+            <h1>Keep in Touch </h1>
+            <p>Sign up for our mailing list to stay on top of the upcoming events!</p>
+
+            <form action="http://refreshseattle.createsend.com/t/y/s/ntka/" method="post">
+              <ol class="undecorated">
+                <li style="display: inline-block; margin-right: 10px;">
+                  <label for="fieldName">Name</label>
+                  <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" />
+                </li>
+                <li style="display: inline-block; margin-right: 10px;">
+                  <label for="fieldEmail">Email</label>
+                  <input id="fieldEmail" name="cm-ntka-ntka" type="email" required placeholder="you@yourdomain.com" />
+                </li>
+                <li style="display: inline-block;">
+                  <button class="btn" type="submit">Subscribe</button>
+                </li>
+              </ol>
+            </form>
+            <span class="footer-mailing-list-powered-by">Powered by<%= link_to image_tag('campaignmonitor_full_white.svg'), 'http://campaignmonitor.com' %></span>
+          </article>
+        </section>
+
+        <section class="footer-info e2-e7">
+          <article class="footer-about">
             <h1>About</h1>
             <p>Refresh Seattle is a community of designers and developers working to refresh the creative, technical, and professional culture of New Media endeavors in the Seattle/Puget Sound area. Promoting design, technology, usability, and standards, Refresh Seattle is a part of Refresh and the associated <a href="http://refreshingcities.com/">Refreshing Cities</a>.</p>
           </article>
 
           <article>
             <ul class="undecorated social">
-              <li>  
+              <li>
                 <a class="ss-social-circle ss-icon" href="http://twitter.com/refreshseattle">Twitter</a>
               </li>
               <li>
@@ -45,44 +86,6 @@
               </li>
             </ul>
           </article>
-        </section>
-
-        <section class="footer-upcoming e5-e7">
-          <div class="footer-speakers">
-            <h1>Upcoming Speakers</h1>
-            <% if upcoming_speakers.any? %>
-              <ol class="speakers-upcoming">
-              <% upcoming_speakers.each do |speaker| %>
-                <li class="speaker">
-                  <span class="speaker-name"><%= speaker[:name] %></span><span class="speaker-date"> &ndash; <%= speaker[:date].to_time.to_formatted_s :month_and_day %></span>
-                </li>
-              <% end %>
-              </ol>
-            <% end %>
-            <p>We&rsquo;re on the look for more speakers! If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us' %>!</p>
-          </div>
-
-          <div class="footer-mailing-list">
-            <h1>Keep in Touch!</h1>
-            <p>Sign up for our mailing list to stay on top of the upcoming events!</p>
-
-            <form action="http://refreshseattle.createsend.com/t/y/s/ntka/" method="post">
-              <ol class="undecorated">
-                <li>
-                  <label for="fieldName">Name</label>
-                  <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" />
-                </li>
-                <li>
-                  <label for="fieldEmail">Email</label>
-                  <input id="fieldEmail" name="cm-ntka-ntka" type="email" required placeholder="you@yourdomain.com" />
-                </li>
-                <li>
-                  <button class="btn" type="submit">Subscribe</button>
-                </li>
-              </ol>
-            </form>
-            <span class="footer-mailing-list-powered-by">Powered by<%= link_to image_tag('campaignmonitor_full_white.svg'), 'http://campaignmonitor.com' %></span>
-          </div>
         </section>
       </div>
     </footer>

@@ -56,6 +56,8 @@ gem 'newrelic_rpm'
 
 gem 'dotenv-rails', group: [:development, :test]
 
+gem 'actionview-encoded_mail_to'
+
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'

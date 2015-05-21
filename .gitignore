@@ -17,3 +17,6 @@
 
 # Temporarily ignore the .env file
 .env
+
+bin/*
+.sass-cache/*
