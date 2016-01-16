@@ -1,5 +1,5 @@
 Refreshsea::Application.routes.draw do
-  resources :events, only: [:index]
+  resources :events, only: [:index, :show]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
