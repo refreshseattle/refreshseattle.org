@@ -1,5 +1,5 @@
 Refreshsea::Application.routes.draw do
-  resources :events
+  resources :events, only: [:index]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -48,7 +48,7 @@ Refreshsea::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
