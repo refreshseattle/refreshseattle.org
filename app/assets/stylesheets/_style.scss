@@ -207,6 +207,27 @@ ul, ol {
   @include footer-spacing;
 }
 
+.footer-sponsors {
+  @include footer-spacing;
+
+  ul {
+    padding-left: 0;
+
+    @include clearfix;
+
+    li {
+      list-style: none;
+      width: 23%;
+      margin-right: 2%;
+      float: left;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
 .footer-mailing-list {
   label {
     display: block;
