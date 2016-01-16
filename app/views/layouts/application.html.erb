@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <%= render partial: "shared/facebook_meta" %>
 
     <title>Refresh Seattle</title>
 
@@ -14,6 +15,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= controller.controller_name %>">
+    <%= render partial: "shared/facebook_connect" %>
 
     <header class="header">
       <nav>

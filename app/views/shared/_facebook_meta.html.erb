@@ -1,0 +1,6 @@
+<meta property="og:url" content="<%= request.original_url %>" />
+<meta property="og:type" content="<%= @event.present? ? 'article' : 'website' %>" />
+<% if @event.present? %>
+  <meta property="og:title" content="<%= @event.title %>" />
+<% end %>
+<meta property="og:description" content="Refresh Seattle is a community of designers and developers working to refresh the creative, technical, and professional culture of New Media endeavors in the Seattle/Puget Sound area." />
