@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.3.0'
 # Use ActiveAdmin
 # gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
-gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -45,8 +45,8 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-gem 'unicorn'
+# Use puma as the app server
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
