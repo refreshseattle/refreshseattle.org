@@ -11,7 +11,6 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
 gem 'bourbon'
-gem 'neat'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.7.1'
