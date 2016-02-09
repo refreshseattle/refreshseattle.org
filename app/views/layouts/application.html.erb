@@ -7,10 +7,8 @@
 
     <title>Refresh Seattle</title>
 
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700", media: "all", "data-turbolinks-track" => true %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag "//cdn.symbolset.com/7caa794d058ea28c29dee173f9491b3993b2d375/symbolset.css", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "//use.typekit.net/gps1wlc.js", "data-turbolinks-track" => true %>
-    <%= javascript_tag 'try{Typekit.load();}catch(e){}' %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -18,87 +16,98 @@
     <%= render partial: "shared/facebook_connect" %>
 
     <header class="header">
-      <nav>
-        <ul>
-          <li class="e2-e7 brand">
+      <nav class="container">
+        <ul class="l-brand col-xs-12">
+          <li class="brand">
             <a href="/">Refresh Seattle</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <%= yield %>
+    <section class="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
 
     <footer class="footer">
-      <div class="l-wrapper">
-      <section class="footer-upcoming e2-e4">
-          <div class="footer-speakers">
-            <h1>Upcoming Events</h1>
-            <% if upcoming_events.any? %>
-              <ol class="speakers-upcoming">
-              <% upcoming_events.slice(0, 3).each do |event| %>
-                <li class="speaker">
-                  <span class="speaker-name"><%= link_to event[:title], event_path(event[:id]) %></span><br/><span class="speaker-date"><%= event[:date].to_time.to_formatted_s :month_and_day %> &ndash; <%= event[:speaker] %></span>
-                </li>
-              <% end %>
-              </ol>
-            <% end %>
-            <p><%= link_to "Check out all of our upcoming events!", events_path %></p>
-            <p>We&rsquo;re on the look for more speakers! If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us', encode: 'hex' %>!</p>
-          </div>
-        </section>
+      <div class="container">
+        <div class="row">
+          <section class="footer-upcoming col-sm-6">
+              <div class="footer-speakers">
+                <h1>Upcoming Events</h1>
+                <% if upcoming_events.any? %>
+                  <ol class="speakers-upcoming">
+                  <% upcoming_events.slice(0, 3).each do |event| %>
+                    <li class="speaker">
+                      <span class="speaker-name"><%= link_to event[:title], event_path(event[:id]) %></span><br/><span class="speaker-date"><%= event[:date].to_time.to_formatted_s :month_and_day %> &ndash; <%= event[:speaker] %></span>
+                    </li>
+                  <% end %>
+                  </ol>
+                <% end %>
+                <p><%= link_to "Check out all of our upcoming events!", events_path %></p>
+                <p>We&rsquo;re on the look for more speakers!<br/>If you&rsquo;d like to present, please <%= mail_to 'organizers@refreshseattle.org', 'contact us', encode: 'hex' %>!</p>
+              </div>
+            </section>
 
-        <section class="e5-e7">
-          <article class="footer-mailing-list">
-            <h1>Keep in Touch </h1>
-            <p>Sign up for our mailing list to stay on top of the upcoming events!</p>
+            <section class="footer-contact col-sm-6">
+              <article class="footer-mailing-list">
+                <h1>Keep in Touch </h1>
+                <p>Sign up for our mailing list to stay on top of the upcoming events!</p>
 
-            <form action="http://refreshseattle.createsend.com/t/y/s/ntka/" method="post">
-              <ol class="undecorated">
-                <li style="display: inline-block; margin-right: 10px;">
-                  <label for="fieldName">Name</label>
-                  <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" />
-                </li>
-                <li style="display: inline-block; margin-right: 10px;">
-                  <label for="fieldEmail">Email</label>
-                  <input id="fieldEmail" name="cm-ntka-ntka" type="email" required placeholder="you@yourdomain.com" />
-                </li>
-                <li style="display: inline-block;">
-                  <button class="btn" type="submit">Subscribe</button>
-                </li>
-              </ol>
-            </form>
-            <span class="footer-mailing-list-powered-by">Powered by<%= link_to image_tag('campaignmonitor_full_white.svg'), 'http://campaignmonitor.com' %></span>
-          </article>
-        </section>
+                <form action="http://refreshseattle.createsend.com/t/y/s/ntka/" method="post">
+                  <ol class="undecorated">
+                    <li style="display: inline-block; margin-right: 10px;">
+                      <label for="fieldName">Name</label>
+                      <input id="fieldName" name="cm-name" type="text" placeholder="Your Name" />
+                    </li>
+                    <li style="display: inline-block; margin-right: 10px;">
+                      <label for="fieldEmail">Email</label>
+                      <input id="fieldEmail" name="cm-ntka-ntka" type="email" required placeholder="you@yourdomain.com" />
+                    </li>
+                    <li style="display: inline-block;">
+                      <button class="btn" type="submit">Subscribe</button>
+                    </li>
+                  </ol>
+                </form>
+              </article>
+            </section>
+          </div> <!-- /.row -->
 
-        <section class="footer-info e2-e7">
-          <article class="footer-sponsors">
-            <h1>Sponsors</h1>
-          <p>Refresh Seattle doesn't work without the generous support of our event sponsors. This includes these wonderful folks:</p>
-          <ul class="sponsor-list">
-            <li><%= link_to image_tag('PS_logo_F-05.png'), 'https://www.pluralsight.com/' %></li>
-          </ul>
-          </article>
-        </section>
+          <div class="row">
+            <section class="footer-info col-sm-6">
+              <article class="footer-sponsors">
+                <h1>Sponsors</h1>
+                <p>Refresh Seattle doesn't work without the generous support of our event sponsors. This includes these wonderful folks:</p>
+                <ul class="sponsor-list row">
+                  <li class="col-xs-4"><%= link_to image_tag('campaignmonitor_full_white.svg'), 'http://campaignmonitor.com' %></li>
+                  <li class="col-xs-4"><%= link_to image_tag('PS_logo_F-05.png'), 'https://www.pluralsight.com/' %></li>
+                </ul>
+              </article>
+            </section>
 
-        <section class="footer-info e2-e7">
-          <article class="footer-about">
-            <h1>About</h1>
-            <p>Refresh Seattle is a community of designers and developers working to refresh the creative, technical, and professional culture of New Media endeavors in the Seattle/Puget Sound area. Promoting design, technology, usability, and standards, Refresh Seattle is a part of Refresh and the associated <a href="http://refreshingcities.com/">Refreshing Cities</a>.</p>
-          </article>
+            <section class="footer-info col-sm-6">
+              <article class="footer-about">
+                <h1>About</h1>
+                <p>Refresh Seattle is a community of designers and developers working to refresh the creative, technical, and professional culture of New Media endeavors in the Seattle/Puget Sound area. Promoting design, technology, usability, and standards, Refresh Seattle is a part of Refresh and the associated <a href="http://refreshingcities.com/">Refreshing Cities</a>.</p>
+              </article>
 
-          <article>
-            <ul class="undecorated social">
-              <li>
-                <a class="ss-social-circle ss-icon" href="http://twitter.com/refreshseattle">Twitter</a>
-              </li>
-              <li>
-                <a class="ss-social-circle ss-icon" href="http://github.com/refreshseattle">GitHub</a>
-              </li>
-            </ul>
-          </article>
-        </section>
+              <article>
+                <ul class="undecorated social">
+                  <li>
+                    <a class="icon-twitter" href="http://twitter.com/refreshseattle"><span class="sr-only">Twitter</span></a>
+                  </li>
+                  <li>
+                    <a class="icon-github" href="http://github.com/refreshseattle"><span class="sr-only">GitHub</span></a>
+                  </li>
+                  <li>
+                    <a class="icon-facebook3" href="http://facebook.com/refreshseattle"><span class="sr-only">Facebook</span></a>
+                  </li>
+                </ul>
+              </article>
+            </section>
+          </div> <!-- /.row -->
       </div>
     </footer>
     <% if Rails.env.production? %>

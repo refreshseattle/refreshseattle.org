@@ -1,17 +1,16 @@
 <% if @events.any? %>
-  <section id="main" class="l-wrapper">
-  <ol class="event-list e2-e7">
-    <% @events.each do |event| %>
-    <%= content_tag :li, class: "event-info #{'event-featured ss-star' if event.featured} #{'event-upcoming' if event.is_upcoming?}".rstrip do %>
-      <%= link_to event, class: "event-title" do %>
-        <%= event.title %>
+  <section id="main" class="container">
+    <div class="row">
+    <ol class="event-list col-xs-12">
+      <% @events.each do |event| %>
+      <%= content_tag :li, class: "event-info #{'event-featured ss-star' if event.featured} #{'event-upcoming' if event.is_upcoming?}".rstrip do %>
+        <%= link_to event, class: "event-title" do %>
+          <%= event.title %>
+        <% end %>
+        <span class="event-time"><%= event.event_date.to_time.to_formatted_s(:month_day_year) %></span>
       <% end %>
-      <span class="event-time"><%= event.event_date.to_time.to_formatted_s(:month_day_year) %></span>
-    <% end %>
-    <% end %>
-  </ol>
-
-  <%# haaaaaaaaaaaaack %>
-  <article class="details"></article>
-  </section>
+      <% end %>
+    </ol>
+  </div>
+</section>
 <% end %>
