@@ -70,45 +70,14 @@ a {
 }
 
 .main {
-//   position: relative;
-//   z-index: 1;
-//   margin: 0 auto;
   padding: {
     top: 30px;
     right: 3%;
     bottom: 30px;
     left: 3%;
   }
-  // width: 100%;
   background-color: $bodyBackground;
-//
-//   &:before, &:after {
-//     content: '';
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     height: 100%;
-//     width: 250%;
-//     background-color: inherit;
-//   }
-//
-//   &:before {
-//     left: -250%;
-//   }
-//
-//   &:after {
-//     right : -250%;
-//   }
-//
-//   > div {
-//     @include clearfix;
-//   }
 }
-
-// .main, .footer {
-  // max-width: 100%;
-  // @include clearfix;
-// }
 
 ul, ol {
   &.undecorated {
