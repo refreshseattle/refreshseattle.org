@@ -1,0 +1,17 @@
+@import "variables";
+
+nav .nav-items {
+  text-align: right;
+
+  .nav-item {
+    display: inline-block;
+    margin-right: 20px;
+
+    a {
+      background-color: $red;
+      color: $white;
+      padding: 17px;
+      margin-bottom: -50px;
+    }
+  }
+}

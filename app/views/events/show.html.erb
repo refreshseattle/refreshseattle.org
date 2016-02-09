@@ -1,21 +1,21 @@
-<section id="main" class="l-wrapper">
-  <article class="event-info e2-e7">
+<section class="l-wrapper">
+  <article class="event-info col-xs-12">
     <h1 class="event-title"><%= @event.title %></h1>
     <h2 class="event-time"><%= @event.event_date.to_time.to_formatted_s(:month_and_day) %> <small><strong><%= @event.event_start_time.to_s(:time_no_meridian).lstrip %>&ndash;<%= @event.event_end_time.to_s(:time_with_meridian).lstrip %></strong> at <strong><%= @event.site_name %></strong> (<%= @event.site_address %>)</small></h2>
     <p class="event-description"><%= markdown @event.description %></p>
   </article>
 
-  <article class="details">
+  <article class="details col-xs-12">
     <% if @event.eventbrite_id.present? %>
-      <div class="details-event-info sv2-sv4">
+      <div class="details-event-info col-sm-6">
         <iframe src="http://www.eventbrite.com/tickets-external?eid=<%= @event.eventbrite_id %>&ref=etckt&amp;v=2" frameborder="0" height="214" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
       </div>
 
-      <div id="map" class="details-map sv5-sv6">
+      <div id="map" class="details-map col-sm-6">
         <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['MAPS_API_KEY'] %>&q=<%= CGI.escape @event.site_address %>"></iframe>
       </div>
     <% else %>
-      <div id="map" class="details-map sv2-sv6">
+      <div id="map" class="details-map col-xs-12">
         <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['MAPS_API_KEY'] %>&q=<%= CGI.escape @event.site_address %>"></iframe>
       </div>
     <% end %>
